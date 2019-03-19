@@ -1,0 +1,121 @@
+<div class="container" style="text-align:center">
+    <h3 style="color: darkgray;">Book Basement Custom View</h3>
+    <div class='panel panel-primary'>
+        <div class='panel-body'>
+            <form #formRef="ngForm" (ngSubmit)="submitViews(formRef.value)">
+            <table border="0" align="center">
+            <tr>
+                <td>
+                    <div class="form-group" style="text-align: left">
+                        <label for="title">Title:</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="checkbox" id="title" name="title" 
+                        [(ngModel)]="booksCustomViewData.title">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group" style="text-align: left">
+                        <label for="author">Author:</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="checkbox" id="author" name="author"
+                        [(ngModel)]="booksCustomViewData.author">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group" style="text-align: left">
+                        <label for="isbn">ISBN:</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="checkbox" id="isbn" name="isbn"
+                        [(ngModel)]="booksCustomViewData.isbn">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group" style="text-align: left">
+                        <label for="publicationDate">Publication Date:</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="checkbox" id="publicationDate" name="publicationDate"
+                        [(ngModel)]="booksCustomViewData.publicationDate">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group" style="text-align: left">
+                        <label for="publisher">Publisher:</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="checkbox" id="publisher" name="publisher"
+                        [(ngModel)]="booksCustomViewData.publisher">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group" style="text-align: left">
+                        <label for="price">Price:</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="checkbox" id="price" name="price"
+                        [(ngModel)]="booksCustomViewData.price">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group" style="text-align: left">
+                        <label for="genre">Genre:</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="checkbox" id="genre" name="genre"
+                        [(ngModel)]="booksCustomViewData.genre">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group" style="text-align: left">
+                        <label for="format">Format:</label>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <input type="checkbox" id="format" name="format"
+                        [(ngModel)]="booksCustomViewData.format">
+                    </div>
+                </td>
+            </tr>
+            </table>
+            <div style="text-align:center">
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" [disabled]="formRef.invalid">Submit</button>
+                    <button type="button" class="btn btn-info" routerLink="/">Back</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>

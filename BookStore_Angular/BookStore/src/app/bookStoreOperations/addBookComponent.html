@@ -1,0 +1,171 @@
+<div class="container">
+    <h3 style="color: crimson;">Add New Book</h3>
+    <div class='panel panel-primary'>
+        <div class='panel-body'>
+            <form #formRef="ngForm" (ngSubmit)="addBook(formRef.value)">
+                <table border="0" align="center">
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="booktitle">Title</label>
+                            <input type="text" class="form-control" id="booktitle" name="title" 
+                            [(ngModel)]="book.title" #titleRef="ngModel" minlength="3" required
+                            alphabetsSpacesOnly>
+                            <div *ngIf="titleRef.invalid && (titleRef.dirty || titleRef.touched)" 
+                            class="alert alert-danger">
+                                <div *ngIf="titleRef.errors.required">
+                                    Title is Required
+                                </div>
+                                <div *ngIf="titleRef.errors.minlength">
+                                    Title must be of 3 characters length
+                                </div>
+                            </div> 
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="bookauthor">Author</label>
+                            <input type="text" class="form-control" id="bookauthor" name="author" 
+                            [(ngModel)]="book.author" #authorRef="ngModel" minlength="3" required
+                            alphabetsSpacesPeriodsOnly>
+                            <div *ngIf="authorRef.invalid && (authorRef.dirty || authorRef.touched)" 
+                            class="alert alert-danger">
+                                <div *ngIf="authorRef.errors.required">
+                                    Author is Required
+                                </div>
+                                <div *ngIf="authorRef.errors.minlength">
+                                    Author must be of 3 characters length
+                                </div>
+                            </div> 
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="bookisbn">ISBN</label>
+                            <input type="text" class="form-control" id="bookisbn" name="isbn" 
+                            [(ngModel)]="book.isbn" #isbnRef="ngModel" minlength="13" maxlength="13" 
+                            required numbersOnly>
+                            <div *ngIf="isbnRef.invalid && (isbnRef.dirty || isbnRef.touched)" 
+                            class="alert alert-danger">
+                                <div *ngIf="isbnRef.errors.required">
+                                    ISBN is Required
+                                </div>
+                                <div *ngIf="isbnRef.errors.minlength">
+                                    ISBN must be of 13 characters length
+                                </div>
+                            </div> 
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="bookpublicationDate">Publication Date</label>
+                            <input type="date" class="form-control" id="bookpublicationDate" 
+                            name="publicationDate" [(ngModel)]="book.publicationDate" 
+                            #publicationDateRef="ngModel" minlength="10" maxlength="10" required>
+                            <div *ngIf="publicationDateRef.invalid && (publicationDateRef.dirty || 
+                            publicationDateRef.touched)" class="alert alert-danger">
+                                <div *ngIf="publicationDateRef.errors.required">
+                                    Publication Date is Required
+                                </div>
+                                <div *ngIf="publicationDateRef.errors.minlength">
+                                    Publication Date must be of 10 characters length
+                                </div>
+                            </div> 
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="bookpublisher">Publisher</label>
+                            <input type="text" class="form-control" id="bookpublisher" 
+                            name="publisher" [(ngModel)]="book.publisher" #publisherRef="ngModel" 
+                            minlength="3" required alphabetsSpacesOnly>
+                            <div *ngIf="publisherRef.invalid && (publisherRef.dirty || 
+                            publisherRef.touched)" 
+                            class="alert alert-danger">
+                                <div *ngIf="publisherRef.errors.required">
+                                    Publisher is Required
+                                </div>
+                                <div *ngIf="publisherRef.errors.minlength">
+                                    Publisher must be of 3 characters length
+                                </div>
+                            </div> 
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="bookprice">Price</label>
+                            <input type="text" class="form-control" id="bookprice" 
+                            name="price" [(ngModel)]="book.price" #priceRef="ngModel" 
+                            minlength="2" maxlength="4" required numbersOnly>
+                            <div *ngIf="priceRef.invalid && (priceRef.dirty || priceRef.touched)" 
+                            class="alert alert-danger">
+                                <div *ngIf="priceRef.errors.required">
+                                    Price is Required
+                                </div>
+                                <div *ngIf="priceRef.errors.minlength">
+                                    Price must be of 2 characters length minimum.
+                                </div>
+                            </div> 
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="bookgenre">Genre</label>
+                            <select class="form-control" id="bookgenre" name="genre" 
+                            [(ngModel)]="book.genre" #genreRef="ngModel" required>
+                                <option *ngFor="let g of bookGenres" [value]="g.genre">
+                                    {{g.genre}}
+                                </option>
+                            </select>
+                            <div *ngIf="genreRef.invalid && (genreRef.dirty || genreRef.touched)" 
+                            class="alert alert-danger">
+                                <div *ngIf="genreRef.errors.required">
+                                    Genre is Required
+                                </div>
+                            </div> 
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="bookformat">Format</label>
+                            <select class="form-control" id="bookformat" name="format" 
+                            [(ngModel)]="book.format" #formatRef="ngModel" required>
+                                <option *ngFor="let f of bookFormats" [value]="f.format">
+                                    {{f.format}}
+                                </option>
+                            </select>
+                            <div *ngIf="formatRef.invalid && (formatRef.dirty || formatRef.touched)" 
+                            class="alert alert-danger">
+                                <div *ngIf="formatRef.errors.required">
+                                    Format is Required
+                                </div>
+                            </div> 
+                        </div>
+                    </td>
+                </tr>
+                </table>
+                <div style="text-align:center">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary" 
+                        [disabled]="formRef.invalid">Add Book</button>
+                        <button type="button" routerLink='/books' class="btn btn-info">Back</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

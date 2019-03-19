@@ -1,0 +1,70 @@
+<div class="container" style="text-align:center">
+    <h1 style="color: crimson">Book Details</h1>
+    <div class='panel panel-primary'>
+        <div class='panel-body'>
+            <table border="0" align="center">
+            <tr>
+            <td>
+                <div class="form-group" style="text-align: left">
+                    <label>Title:</label>&nbsp;{{title}}
+                </div>
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <div class="form-group" style="text-align: left">
+                    <label>Author:</label>&nbsp;{{author}}
+                </div>
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <div class="form-group" style="text-align: left">
+                    <label>ISBN:</label>&nbsp;{{isbn}}
+                </div>
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <div class="form-group" style="text-align: left">
+                    <label>Publication Date:</label>&nbsp;{{publicationDate | date:'dd/MM/yyyy'}}
+                </div>
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <div class="form-group" style="text-align: left">
+                    <label>Publisher:</label>&nbsp;{{publisher}}
+                </div>
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <div class="form-group" style="text-align: left">
+                    <label>Price:</label>&nbsp;{{price}}
+                </div>
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <div class="form-group" style="text-align: left">
+                    <label>Genre:</label>&nbsp;{{genre}}
+                </div>
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <div class="form-group" style="text-align: left">
+                    <label>Format:</label>&nbsp;{{format}}
+                </div>
+            </td>
+            </tr>
+            </table>
+            <div style="text-align:center">
+                <div class="form-group">
+                    <button type="button" class="btn btn-xs btn-primary" (click)="goBack()">Back</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
